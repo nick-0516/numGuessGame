@@ -93,21 +93,7 @@ class numGuessGame {
             System.out.println("\nOops!! I was thinking " +num+ " you couldn't guess that in "+chances+" attempts");
             
             decision();
-            // do{
-            //     boolean flag;
-                
-            //     System.out.print("\nWould you like to play again? - y/n : ");
-            //     String cho = sccc.nextLine();
-            //     switch(cho){
-            //         case "y":
-            //             init();
-            //         case "n":
-            //             System.exit(0);
-            //         default:
-            //             System.out.println("\nincorrect selection, select 'y' or 'n'");
-            //             flag = true;
-            //     }
-            // }while(true);
+            
 
         }
 }
