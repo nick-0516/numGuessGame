@@ -42,6 +42,25 @@ class numGuessGame {
         }
         sc.close();
     }
+    public static void decision(){
+        
+        do{
+            boolean flag;
+            Scanner sccc = new Scanner(System.in);
+            System.out.print("\nWould you like to play again? - y/n : ");
+            String cho = sccc.nextLine();
+            switch(cho){
+                case "y":
+                    init();
+                case "n":
+                    System.exit(0);
+                default:
+                    System.out.println("\nincorrect selection, select 'y' or 'n'");
+                    flag = true;
+            }
+        }while(true);
+        
+    }
     public static void game(int chances){
             Scanner scc = new Scanner(System.in);
             Random rand = new Random();
@@ -59,7 +78,8 @@ class numGuessGame {
                     }while(guess <= 0 | guess > 100);
                 }
                 if(guess == num){
-                    System.out.println("Congratulations! You guessed the correct number in" +i+ "attempt(s).");
+                    System.out.println("Congratulations! You guessed the correct number in " +i+ " attempt(s).");
+                    decision();
                 }
                 else{
                     if(guess>num){
@@ -70,23 +90,24 @@ class numGuessGame {
                     }
                 }
             }
-            System.out.println("\nOops!! you couldn't guess the correct number in "+chances+" attempts");
-            Scanner sccc = new Scanner(System.in);
-            do{
-                boolean flag;
+            System.out.println("\nOops!! I was thinking " +num+ " you couldn't guess that in "+chances+" attempts");
+            
+            decision();
+            // do{
+            //     boolean flag;
                 
-                System.out.print("Would you like to play again? - y/n : ");
-                String cho = sccc.nextLine();
-                switch(cho){
-                    case "y":
-                        init();
-                    case "n":
-                        System.exit(0);
-                    default:
-                        System.out.println("incorrect selection, select 'y' or 'n'");
-                        flag = true;
-                }
-            }while(true);
+            //     System.out.print("\nWould you like to play again? - y/n : ");
+            //     String cho = sccc.nextLine();
+            //     switch(cho){
+            //         case "y":
+            //             init();
+            //         case "n":
+            //             System.exit(0);
+            //         default:
+            //             System.out.println("\nincorrect selection, select 'y' or 'n'");
+            //             flag = true;
+            //     }
+            // }while(true);
 
         }
 }
